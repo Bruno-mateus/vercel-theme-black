@@ -1,0 +1,113 @@
+header {
+  max-width: 104.8rem;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center; // Later
+  padding: 1.6rem 2.4rem; // Later
+
+  .left {
+    height: 2.6rem;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .middle ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    li a {
+      font-size: 1.4rem;
+      padding: 0.8rem 1.6rem;
+      color: var(--gray);
+      text-decoration: none;
+
+      & + a {
+        margin-left: 1.2rem;
+      }
+    }
+  }
+
+  .right {
+    margin-left: 0.8rem;
+    display: flex;
+    align-items: center;
+    .conf {
+      padding: 0.6rem;
+      border: 1px solid var(--gray);
+      margin-top: 0.9rem;
+      span {
+        transform: translateX(-50%) translateY(-50%);
+
+        color: var(--white);
+        font-size: 1.4rem;
+        width: max-content;
+      }
+    }
+    .avatar {
+      margin-left: 0.1rem;
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+  .menu-toggle {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .close {
+    display: none;
+  }
+}
+@media screen and (max-width: 860px) {
+  svg:hover {
+    cursor: pointer;
+  }
+  .middle {
+    display: none;
+  }
+  .show {
+    position: absolute;
+    z-index: 999999999999999;
+    background-color: var(--black);
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    text-align: center;
+
+    justify-content: center;
+    align-items: center;
+    & ul {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      & li a {
+        font-size: 3.5rem !important;
+        color: var(--white) !important;
+        transition: 200ms ease;
+        &:hover {
+          color: var(--gray) !important;
+          font-size: 3.2rem !important;
+        }
+      }
+    }
+    .close {
+      position: fixed;
+      top: 1.6rem;
+      right: 2.4rem;
+      padding: 10px;
+    }
+  }
+
+  .menu-toggle {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
